@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TCL Live+</string>
+    <string name="service_label">TCL Live+ kanal katmanı</string>
+    <string name="service_desc">Canlı TV\'de OK tuşuna basınca TCL kanal listesi yerine TCL Live+ listesini açar. Kanalları içe aktarmak için de kullanılır.</string>
+</resources>

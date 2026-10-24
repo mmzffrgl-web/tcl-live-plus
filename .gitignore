@@ -1,0 +1,30 @@
+# Derleme çıktıları
+out/
+build/
+*.apk
+*.aab
+*.apk.idsig
+
+# İmzalama anahtarları (asla paylaşma)
+*.jks
+*.keystore
+*.p12
+*.pem
+*.key
+keystore.properties
+
+# IDE / yerel ayarlar
+.idea/
+*.iml
+.gradle/
+local.properties
+.vscode/
+*.log
+
+# İşletim sistemi dosyaları
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Geçici dosyalar
+*.tmp

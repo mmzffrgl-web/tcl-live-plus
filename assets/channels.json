@@ -1,0 +1,10 @@
+[
+  { "n": "1", "name": "TRT1 HD", "epg": "TRT.1.HD.tr", "logo": "trt1" },
+  { "n": "2", "name": "SHOW HD", "epg": "SHOW.TV.HD.tr", "logo": "showtv" },
+  { "n": "3", "name": "ATV", "epg": "ATV.HD.tr", "logo": "atv" },
+  { "n": "4", "name": "STAR TV", "epg": "STAR.TV.HD.tr", "logo": "startv" },
+  { "n": "5", "name": "KANAL D HD", "epg": "KANAL.D.HD.tr", "logo": "kanald" },
+  { "n": "6", "name": "TRT2 HD", "logo": "trt2" },
+  { "n": "7", "name": "NOW", "epg": "FOX.HD.tr", "logo": "nowtv" },
+  { "n": "8", "name": "NTV", "epg": "NTV.HD.tr", "logo": "ntv" }
+]
