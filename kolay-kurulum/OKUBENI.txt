@@ -1,0 +1,53 @@
+TCL Live+ - Kolay Kurulum (Windows)
+====================================
+
+Bu klasörde:
+  Kur.bat              -> çift tıklayarak kurulumu başlatır
+  TCL-Live-Plus.apk    -> TV'ye kurulacak uygulama
+
+Kurulumdan önce TV'de:
+1. TV ile bilgisayarı aynı Wi-Fi ağına bağlayın.
+2. TV'de Geliştirici seçeneklerini açın:
+   Ayarlar > Sistem > Hakkında > "Yapı numarası"na 7 kez basın.
+3. Ayarlar > Sistem > Geliştirici seçenekleri > "USB hata ayıklama"
+   veya "ADB hata ayıklama" seçeneğini açın.
+4. TV'nin IP adresini öğrenin:
+   Ayarlar > Ağ > Durum  (örnek: 192.168.1.50)
+
+Kurulum:
+1. Kur.bat dosyasına çift tıklayın.
+2. TV IP adresini yazın (port yazmayın).
+3. TV ekranında çıkan "Allow USB debugging" / "İzin ver"
+   penceresini onaylayın.
+4. "TCL Live+" yüklendikten sonra TV'de Erişilebilirlik
+   ayarları açılır. "TCL Live+" servisini bulup AÇIN.
+5. Bilgisayarda Enter'a basın; uygulama TV'de açılır.
+6. "Kanalları içe aktar" ile başlayın.
+
+Windows uyarısı:
+- "Windows protected your PC" / "Windows koruması" çıkarsa:
+  "More info" > "Run anyway" seçin.
+- Kur.bat yönetici izni istemez.
+
+USB ile denemek isterseniz:
+- TV'yi USB ile bağlayın ve USB hata ayıklamayı açın.
+- Kur.bat'ı çalıştırın; TV otomatik bulunursa IP sormaz.
+
+Takılırsanız:
+- "Bağlı TV bulunamadı": TV ve bilgisayarın aynı Wi-Fi'da
+  olduğundan, ADB/USB hata ayıklamanın açık olduğundan ve
+  IP adresinin doğru olduğundan emin olun.
+- "unauthorized": TV ekranındaki izin penceresini onaylayın.
+  Pencere görünmüyorsa TV'de hata ayıklamayı kapatıp açın.
+- "INSTALL_FAILED_UPDATE_INCOMPATIBLE": eski sürüm farklı
+  anahtarla imzalıdır. Önce kaldırın:
+    adb uninstall io.tcllive.overlay
+  Sonra Kur.bat'ı tekrar çalıştırın.
+- Erişilebilirlik listesinde "TCL Live+" görünmüyorsa:
+  uygulamanın kurulu olduğundan emin olun ve Erişilebilirlik
+  ayarlarını yeniden açın.
+
+Notlar:
+- ADB ilk çalıştırmada otomatik indirilir (yaklaşık 10 MB).
+- Kurulumdan sonra TV'de geliştirici seçeneklerini kapatabilirsiniz.
+- Bu uygulama yayın içermez; yalnızca yasal içeriklerle kullanın.

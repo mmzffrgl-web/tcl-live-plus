@@ -30,7 +30,21 @@ Kumandadan OK'a basınca TCL'in listesi yerine bu katman açılır.
 - YouTube tuşu ile YouTube TV'yi açma
 - Yeniden başlatma sonrası ayarların ve servis durumunun korunması
 
-## Kurulum
+## Kolay Kurulum (Windows)
+
+Bilgisayar bilgisi çok olmayanlar için tek tıkla kurulum:
+
+1. [Releases](../../releases) sayfasından `TCL-Live-Plus-Kurulum.zip` dosyasını indir.
+2. ZIP'i bir klasöre çıkar.
+3. `Kur.bat` dosyasına çift tıkla.
+4. TV'nin IP adresini gir (TV ve bilgisayar aynı Wi-Fi ağında olmalı).
+5. TV'de çıkan izin penceresini onayla.
+6. TV'de Erişilebilirlik ayarlarında **TCL Live+** servisini aç.
+
+`Kur.bat`, ADB'yi gerekirse otomatik indirir; ayrıca ADB kurman gerekmez.
+Ayrıntılı adımlar: [`kolay-kurulum/OKUBENI.txt`](kolay-kurulum/OKUBENI.txt).
+
+## Manuel Kurulum
 
 1. [Releases](../../releases) sayfasından `TCL-Live-Plus.apk` dosyasını indir.
 2. TV'ye yükle:

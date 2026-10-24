@@ -1,6 +1,7 @@
 # Derleme çıktıları
 out/
 build/
+dist/
 *.apk
 *.aab
 *.apk.idsig
