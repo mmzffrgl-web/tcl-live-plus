@@ -1,10 +1,10 @@
 # TCL Live+ (root gerektirmez)
 
-TCL Android TV'lerde canlı TV deneyimini geliştiren, root gerektirmeyen bir katman uygulaması.
-TCL'in kendi kanal listesini değiştirmez; erişilebilirlik servisi + overlay ile onun üzerine biner.
+TCL Android TV'lerde canlı TV deneyimini geliştiren, root gerektirmeyen bir katman.
+TCL'in kanal listesini değiştirmez; erişilebilirlik servisi + overlay ile üzerine biner.
 Kumandadan OK'a basınca TCL'in listesi yerine bu katman açılır.
 
-> Bu proje TCL ile resmî bağlantılı değildir. TCL adı, kanal adları ve logolar ilgili sahiplerine aittir.
+> TCL ile resmî bağlantılı değildir. TCL adı, kanal adları ve logolar sahiplerine aittir.
 
 ## Ekran görüntüleri
 
@@ -12,111 +12,100 @@ Kumandadan OK'a basınca TCL'in listesi yerine bu katman açılır.
 |---|---|
 | ![Kanal listesi](docs/screenshots/kanal-listesi.png) | ![IPTV listesi](docs/screenshots/iptv-listesi.png) |
 
-| TKGS kanal sırası | Ayarlar |
+| TKGS | Ayarlar |
 |---|---|
-| ![TKGS kanal sırası](docs/screenshots/tkgs.png) | ![Ayarlar](docs/screenshots/ayarlar.png) |
+| ![TKGS](docs/screenshots/tkgs.png) | ![Ayarlar](docs/screenshots/ayarlar.png) |
 
-## Özellikler
+## Kolay Kurulum (Windows) — önerilen
 
-- OK ile açılan yarı saydam kanal listesi; Türkçe kanal logoları APK içinde gömülü (`assets/logos`)
-- EPG internetten (XMLTV, varsayılan: `epgshare01 TR1`) — uydu EPG'si kullanılmaz
-- TKGS kanal sırası desteği
-- IPTV: varsayılan M3U listesi otomatik indirilir; Ayarlar'dan özel M3U adresi girilebilir
-- IPTV oynatıcı: TextureView + MediaPlayer; HLS/MP4 akışları
-- IPTV oynatıcıda UP/DOWN ile önceki/sonraki kanal (liste başında/sonunda döngülü)
-- IPTV oynatıcıda OK ile IPTV listesine dönüş, GERİ ile canlı TV'ye çıkış
-- IPTV listesinde UP/DOWN gezinme (basılı tutunca hızlı kaydırma), LEFT/RIGHT sayfa
-- IPTV oynatıcıda YEŞİL ile ekran modu: Sığdır / Doldur / Kırp
-- YouTube tuşu ile YouTube TV'yi açma
-- Yeniden başlatma sonrası ayarların ve servis durumunun korunması
+Bilgisayar bilgisi gerekmez. ADB'yi ayrıca indirmeniz veya komut yazmanız gerekmez.
+`Kur.bat`, ADB'yi Google'ın resmî platform-tools paketinden otomatik indirir.
 
-## Kolay Kurulum (Windows)
+### 1. TV'de geliştirici seçeneklerini açın
 
-Bilgisayar bilgisi çok olmayanlar için tek tıkla kurulum:
+1. **Ayarlar → Sistem → Hakkında** bölümüne gidin.
+2. **Yapı numarası** üzerine 7 kez basın.
+3. **Ayarlar → Sistem → Geliştirici seçenekleri** bölümüne girin.
+4. **USB hata ayıklama** veya **ADB hata ayıklama** seçeneğini açın.
 
-1. [Releases](../../releases) sayfasından `TCL-Live-Plus-Kurulum.zip` dosyasını indir.
-2. ZIP'i bir klasöre çıkar.
-3. `Kur.bat` dosyasına çift tıkla.
-4. TV'nin IP adresini gir (TV ve bilgisayar aynı Wi-Fi ağında olmalı).
-5. TV'de çıkan izin penceresini onayla.
-6. TV'de Erişilebilirlik ayarlarında **TCL Live+** servisini aç.
+### 2. TV'nin IP adresini alın
 
-`Kur.bat`, ADB'yi gerekirse otomatik indirir; ayrıca ADB kurman gerekmez.
-Ayrıntılı adımlar: [`kolay-kurulum/OKUBENI.txt`](kolay-kurulum/OKUBENI.txt).
+1. **Ayarlar → Ağ → Durum** bölümüne gidin.
+2. TV'nin IP adresini not edin (örnek: `192.168.1.50`).
+3. TV ve bilgisayar aynı Wi-Fi ağında olmalı.
 
-## Manuel Kurulum
+### 3. Kurulumu başlatın
 
-1. [Releases](../../releases) sayfasından `TCL-Live-Plus.apk` dosyasını indir.
-2. TV'ye yükle:
+1. [TCL-Live-Plus-Kurulum.zip](https://github.com/mmzffrgl-web/tcl-live-plus/releases/latest/download/TCL-Live-Plus-Kurulum.zip) dosyasını indirin.
+2. ZIP'i bir klasöre çıkarın.
+3. `Kur.bat` dosyasına çift tıklayın.
+4. TV'nin IP adresini yazın.
+5. TV'de çıkan **izin** penceresini onaylayın.
+6. TV'de **Ayarlar → Erişilebilirlik → TCL Live+** servisini açın.
+7. Bilgisayarda Enter'a basın; uygulama TV'de açılır.
 
-   ```bash
-   adb install -r TCL-Live-Plus.apk
-   ```
+`Kur.bat` ilk çalıştırmada yaklaşık 8 MB'lık ADB paketini indirir; sonraki çalıştırmalarda tekrar indirmez.
+Yönetici izni gerekmez. Ayrıntılı rehber: [`kolay-kurulum/OKUBENI.txt`](kolay-kurulum/OKUBENI.txt).
 
-3. TV'de: **Ayarlar → Erişilebilirlik → TCL Live+** servisini aç.
-4. Uygulamayı açıp kanalları içe aktar veya IPTV M3U adresini ayarla.
+### Takılırsanız
+
+- **TV bulunamadı:** TV ve bilgisayarın aynı Wi-Fi'da olduğundan, ADB/USB hata ayıklamanın açık olduğundan ve IP'nin doğru olduğundan emin olun.
+- **`unauthorized`:** TV ekranındaki izin penceresini onaylayın. Pencere görünmüyorsa hata ayıklamayı kapatıp açın.
+- **Windows uyarısı:** “Windows protected your PC” çıkarsa **More info → Run anyway** seçin.
+
+## Manuel Kurulum (ADB zaten kuruluysa)
+
+1. [TCL-Live-Plus.apk](https://github.com/mmzffrgl-web/tcl-live-plus/releases/latest/download/TCL-Live-Plus.apk) indirin.
+2. TV'ye yükleyin: `adb install -r TCL-Live-Plus.apk`
+3. TV'de **Ayarlar → Erişilebilirlik → TCL Live+** servisini açın.
+4. Uygulamayı açıp kanalları içe aktarın veya IPTV M3U adresini girin.
 
 ## Kanalları içe aktarma
 
-1. Uygulamada **Kanalları içe aktar** seçeneğine gir.
-2. TV'de OK ile TCL'in kendi listesini aç, birkaç saniye gez.
-3. GERİ'ye bas, ardından **İçe aktarmayı bitir** seçeneğini kullan.
+1. Uygulamada **Kanalları içe aktar** seçeneğine girin.
+2. TV'de OK ile TCL'in kanal listesini açın ve birkaç saniye gezin.
+3. GERİ'ye basın, ardından **İçe aktarmayı bitir** seçeneğini kullanın.
 
-Kanal numaraları TCL'in kendi numaralarıdır; içe aktarma bunları otomatik toplar.
+Kanal numaraları TCL'in kendi numaralarıdır.
+
+## Özellikler
+
+- OK ile açılan yarı saydam kanal listesi; Türkçe kanal logoları APK içinde
+- EPG internetten (XMLTV; varsayılan `epgshare01 TR1`)
+- TKGS kanal sırası desteği
+- IPTV: otomatik M3U indirme veya Ayarlar'dan özel M3U adresi
+- IPTV oynatıcı: HLS/MP4; UP/DOWN ile önceki/sonraki kanal (döngülü); OK ile listeye dönüş; GERİ ile canlı TV
+- IPTV listesinde UP/DOWN gezinme, LEFT/RIGHT sayfa, YEŞİL ekran modu
+- YouTube tuşuyla YouTube TV
+- Ayarlar: EPG adresi, tuner modu (`dvbs`/`dvbt`/`dvbc`), OK yakalama, IPTV M3U adresi
 
 ## Kumanda
 
-| Bağlam | Tuş | İşlev |
+| Yer | Tuş | İşlev |
 |---|---|---|
-| Kanal listesi | OK | Kanal seç |
-| Kanal listesi | UP / DOWN | Gezin |
-| Kanal listesi | LEFT / RIGHT | Sayfa (basılı tutunca seri sayfa) |
-| Kanal listesi | OK (basılı) | EPG |
-| Kanal listesi | YEŞİL | TKGS |
-| Kanal listesi | KIRMIZI | IPTV |
+| Kanal listesi | OK / UP-DOWN / LEFT-RIGHT | Seç / gezin / sayfa |
+| Kanal listesi | OK (basılı) / YEŞİL / KIRMIZI | EPG / TKGS / IPTV |
 | Kanal listesi | GERİ | Kapat |
-| IPTV listesi | OK | Oynat |
-| IPTV listesi | UP / DOWN | Gezin (basılı tutunca hızlı kaydırma) |
-| IPTV listesi | LEFT / RIGHT | Sayfa |
-| IPTV listesi | KIRMIZI | Kanal listesi |
-| IPTV listesi | GERİ | Canlı TV |
-| IPTV oynatıcı | UP / DOWN | Önceki / sonraki kanal (döngülü) |
-| IPTV oynatıcı | OK | IPTV listesi |
-| IPTV oynatıcı | GERİ | Canlı TV |
-| IPTV oynatıcı | YEŞİL | Ekran modu: Sığdır / Doldur / Kırp |
-| EPG | OK / GERİ | Kanal listesi |
-| TKGS | OK | Çalıştır |
-| TKGS | GERİ | Kanal listesi |
+| IPTV listesi | OK / UP-DOWN / LEFT-RIGHT | Oynat / gezin / sayfa |
+| IPTV listesi | KIRMIZI / GERİ | Kanal listesi / canlı TV |
+| IPTV oynatıcı | UP-DOWN / OK / GERİ / YEŞİL | Önceki-sonraki / liste / canlı TV / ekran modu |
+| EPG / TKGS | OK / GERİ | Seç / geri |
 | Her yerde | YouTube | YouTube TV |
 
-## Ayarlar
-
-- EPG adresi (XMLTV / `.xml.gz`)
-- Tuner modu: `dvbs` (uydu), `dvbt` (karasal), `dvbc`
-- OK yakalama aç/kapat
-- IPTV M3U adresi (boş bırakılırsa varsayılan liste kullanılır)
-
-## Derleme
-
-Gereksinimler: JDK 17+, Android SDK build-tools 34+ ve platform android-34.
+## Geliştirici
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File build.ps1
 ```
 
-Gradle yok: `aapt2 → javac → d8 → zipalign → apksigner`.
-Çıktı: `TCL-Live-Plus.apk`.
+Gereksinimler: JDK 17+, Android SDK build-tools 34+, platform android-34. Gradle yok; çıktı `TCL-Live-Plus.apk`.
 
-`build.ps1` varsayılan olarak `debug.keystore` kullanır; yoksa otomatik oluşturur.
-Bu dosya `.gitignore` içindedir. Herkese açık sürüm için kendi release anahtarınızı kullanın ve anahtarı asla depoya eklemeyin.
+## Notlar
 
-## Sınırlar
-
-- TCL firmware güncellemesi `TVActivity` intent veya erişilebilirlik davranışını değiştirirse kanal değiştirme bozulabilir; liste/EPG çalışmaya devam eder.
-- Erişilebilirlik servisi kapatılırsa her şey TCL'in orijinal davranışına döner.
-- OK yakalandığı için TCL'in kendi bilgi çubuğu OK davranışları devre dışı kalır (kapatılabilir).
 - Root yoktur; TCL tuner'ı veya sistem uygulamaları değiştirilmez.
-- IPTV kanallarının oynatılabilirliği kaynağa ve cihazın MediaPlayer codec desteğine bağlıdır.
+- Erişilebilirlik servisi kapatılırsa TCL'in orijinal davranışına dönülür.
+- TCL firmware güncellemesi kanal değiştirmeyi bozabilir.
+- IPTV oynatma, kaynağa ve cihazın MediaPlayer codec desteğine bağlıdır.
 
 ## Yasal not
 
