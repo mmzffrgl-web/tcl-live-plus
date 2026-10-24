@@ -6,6 +6,16 @@ Kumandadan OK'a basınca TCL'in listesi yerine bu katman açılır.
 
 > Bu proje TCL ile resmî bağlantılı değildir. TCL adı, kanal adları ve logolar ilgili sahiplerine aittir.
 
+## Ekran görüntüleri
+
+| Kanal listesi | IPTV listesi |
+|---|---|
+| ![Kanal listesi](docs/screenshots/kanal-listesi.png) | ![IPTV listesi](docs/screenshots/iptv-listesi.png) |
+
+| TKGS kanal sırası | Ayarlar |
+|---|---|
+| ![TKGS kanal sırası](docs/screenshots/tkgs.png) | ![Ayarlar](docs/screenshots/ayarlar.png) |
+
 ## Özellikler
 
 - OK ile açılan yarı saydam kanal listesi; Türkçe kanal logoları APK içinde gömülü (`assets/logos`)
